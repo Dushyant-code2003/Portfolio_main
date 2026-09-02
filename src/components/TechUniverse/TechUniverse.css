@@ -1,0 +1,80 @@
+.tech-universe {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-universe__canvas {
+  height: clamp(450px, 65vh, 650px);
+  border: 1px solid rgba(232, 228, 220, 0.06);
+  border-radius: 4px;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.tech-universe__tooltip {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(4, 4, 6, 0.9);
+  border: 1px solid rgba(232, 228, 220, 0.1);
+  border-radius: 4px;
+  backdrop-filter: blur(12px);
+  min-height: 80px;
+  transition: opacity 0.3s;
+}
+
+.tech-universe__tooltip-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.tech-universe__tooltip-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tech-universe__tooltip-level {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--signal);
+  margin-bottom: 0.5rem;
+}
+
+.tech-universe__tooltip-related {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.tech-universe__list {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.tech-universe__chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(232, 228, 220, 0.1);
+  border-radius: 2px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .tech-universe__canvas {
+    display: none;
+  }
+
+  .tech-universe__list {
+    display: flex;
+  }
+}

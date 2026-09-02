@@ -1,0 +1,75 @@
+.about {
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--void) 0%, var(--void-soft) 50%, var(--void) 100%);
+}
+
+.about__opener {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text-muted);
+  max-width: 20ch;
+  margin-bottom: clamp(3rem, 10vh, 6rem);
+  line-height: 1.3;
+}
+
+.about__words {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vh, 1.5rem);
+  margin-bottom: clamp(3rem, 8vh, 5rem);
+}
+
+.about__word {
+  font-size: clamp(2.5rem, 10vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  opacity: 0.15;
+  transform: translateX(-40px);
+  transition: color 0.4s;
+}
+
+.about__word.active {
+  opacity: 1;
+  color: var(--text);
+}
+
+.about__word.active .accent {
+  color: var(--accent);
+}
+
+.about__intro {
+  max-width: 52ch;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.about__intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s var(--ease-cine);
+}
+
+.about__tagline {
+  margin-top: 3rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.about__tagline span {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .about__word {
+    transform: translateX(-20px);
+  }
+}

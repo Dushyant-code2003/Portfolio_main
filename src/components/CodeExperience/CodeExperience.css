@@ -1,0 +1,114 @@
+.code-experience {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--void) 0%, var(--void-soft) 100%);
+}
+
+.code-experience__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+.code-experience__editor {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  line-height: 1.8;
+  padding: 2rem;
+  background: rgba(17, 17, 24, 0.8);
+  border: 1px solid rgba(232, 228, 220, 0.08);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.code-experience__line {
+  display: block;
+  opacity: 0.4;
+  transition: opacity 0.4s, transform 0.4s var(--ease-cine);
+}
+
+.code-experience__line.highlight {
+  opacity: 1;
+}
+
+.code-experience__line.run {
+  transform: translateX(8px);
+}
+
+.code-experience__kw { color: #ff6b4a; }
+.code-experience__prop { color: #7c9cff; }
+.code-experience__str { color: #4ade80; }
+.code-experience__num { color: #fbbf24; }
+.code-experience__fn { color: #2dd4bf; }
+
+.code-experience__output {
+  padding: 2rem;
+  border: 1px solid rgba(232, 228, 220, 0.08);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(17, 17, 24, 0.4);
+  min-height: 280px;
+}
+
+.code-experience__viz {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.6s var(--ease-cine);
+}
+
+.code-experience__viz.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.code-experience__viz-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.code-experience__run-btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s var(--ease-cine);
+  margin-top: 1.5rem;
+}
+
+.code-experience__run-btn:hover {
+  background: var(--accent);
+  color: var(--void);
+}
+
+.code-experience__run-btn.running {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .code-experience__layout {
+    grid-template-columns: 1fr;
+  }
+}
