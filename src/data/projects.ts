@@ -118,6 +118,7 @@ export const projects: Project[] = [
       { label: "RESULT", value: "LLM Chatbot + Trailers" },
     ],
     githubUrl: "https://github.com/Dushyant-code2003/Movie-Recommendation-Website",
+    liveUrl: "https://moviemate-7ul1.onrender.com/index.html",
     domain: "WEB",
     story: {
       problem:
